@@ -6,21 +6,26 @@
 </head>
 <body>
 {{^username}}
-<form action = "login" method="post">
-    <input type = "text" placeholder="Enter Your Username" name="username"/>
-    <button type="submit">Login</button>
+<form action = "login" method = "post"/>
+    <input type = "text" placeholder= "Enter your username..." name ="username"/>
+    <button type ="submit">Login</button>
 </form>
 {{/username}}
 {{#username}}
-<form action = "add-message" method="post">
-<input type = "text" placeholder="Enter your message..." name="text"/>
-<button type="post">Post</button>
+<form action = "add-message" method="post"/>
+    <input type="text" placeholder = "Type your post..." name = "text"/>
+    <button type="post">Submit</button>
 </form>
 {{#messages}}
 {{id}}. {{text}}
-<form action = "delete-message" method="post" style="display:inline;">
-    <input type = "hidden" name = "id" value = "{{id}}"/>
-    <button type = "post">Delete</button> <br>
+<form action = "delete-message" method="post"style ="display:inline;">
+    <input type="hidden" name = "id" value = "{{id}}"/>
+    <button type = "post">Delete</button>
+</form><br>
+<form action = "edit-message" method = "post"/>
+    <input type="hidden" name = "id" value = "{{id}}"/>
+    <input type="text" placeholder="Edit your post here?" name="text"/>
+    <button type="post">Edit</button><br>
 </form>
 {{/messages}}
 {{/username}}
